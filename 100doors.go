@@ -10,11 +10,10 @@ func InitialArray() []string {
 		return doors
 }
 
-func Answer(pass int) []string {
-	doors := InitialArray()
-	door := 0
-	if pass > 0 {
-		for door < len(doors) {
+func ToggleDoors(doors []string, pass int) []string {
+	door := pass - 1
+
+	for door < len(doors) {
 		if doors[door] == "closed" {
 			doors[door] = "opened"
 		} else {
@@ -22,7 +21,19 @@ func Answer(pass int) []string {
 		}
 		door += pass
 	}
+
+	return doors
+}
+
+func Answer(pass int) []string {
+	doors := InitialArray()
+	
+	if pass > 0 {
+		for i := 1; i <= pass; i++ {
+			doors = ToggleDoors(doors, i)
+		}
 	}
+
 	return doors
 }
 
