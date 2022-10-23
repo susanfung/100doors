@@ -12,3 +12,7 @@ func TestInitialState(t *testing.T) {
 func TestFirstPass(t *testing.T) {
 	approvals.VerifyArray(t, Answer(1))
 }
+
+func TestSecondPass(t *testing.T) {
+	approvals.VerifyArray(t, Answer(2))
+}
