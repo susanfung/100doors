@@ -10,11 +10,22 @@ func InitialArray() []string {
 		return doors
 }
 
-func Answer() []string {
+func Answer(pass int) []string {
 	doors := InitialArray()
+	door := 0
+	if pass > 0 {
+		for door < len(doors) {
+		if doors[door] == "closed" {
+			doors[door] = "opened"
+		} else {
+			doors[door] = "closed"
+		}
+		door += pass
+	}
+	}
 	return doors
 }
 
 func main() {
-    fmt.Println(Answer())
+    fmt.Println(Answer(0))
 }

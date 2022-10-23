@@ -6,5 +6,9 @@ import (
 )
 
 func TestInitialState(t *testing.T) {
-	approvals.VerifyArray(t, Answer())
+	approvals.VerifyArray(t, Answer(0))
+}
+
+func TestFirstPass(t *testing.T) {
+	approvals.VerifyArray(t, Answer(1))
 }
