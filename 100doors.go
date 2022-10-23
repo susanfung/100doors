@@ -38,5 +38,5 @@ func Answer(pass int) []string {
 }
 
 func main() {
-    fmt.Println(Answer(0))
+    fmt.Println(Answer(100))
 }
