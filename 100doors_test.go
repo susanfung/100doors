@@ -28,3 +28,7 @@ func TestFourthPass(t *testing.T) {
 func TestFifthPass(t *testing.T) {
 	approvals.VerifyArray(t, Answer(5))
 }
+
+func TestHundrethPass(t *testing.T) {
+	approvals.VerifyArray(t, Answer(100))
+}
